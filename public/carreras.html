@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 150vh;
+    background-image: url('t2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+}
+
+.lds-spinner {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.lds-spinner div {
+    box-sizing: border-box;
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    margin: 30px;
+    border: 30px solid;
+    border-radius: 50%;
+    animation: lds-spinner 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #ff0000 transparent transparent transparent;
+}
+
+.lds-spinner div:nth-child(1) {
+    animation-delay: -0.045s;
+}
+/* Continúa con este patrón para el resto de los divs */
+
+@keyframes lds-spinner {
+    0% {
+        transform: rotate(0deg);
+        border-color: #ff0000 transparent transparent transparent;
+    }
+    100% {
+        transform: rotate(360deg);
+        border-color: #0000ff transparent transparent transparent;
+    }
+}
+
+#progress {
+    position: absolute;
+    font-size: 50px;
+    color: #ff0000;
+    animation: colorChange 1.2s infinite;
+}
+
+@keyframes colorChange {
+    0% { color: #ff0000; }
+    100% { color: #0000ff; }
+}
+
+#title {
+    position: absolute;
+    top: 1cm;
+    font-size: 50px;
+    color: white;
+    text-shadow: 2px 2px 4px #FFD700;
+    opacity: 0;
+}
+
+.button-container {
+    position: absolute;
+    top: 3cm;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.button {
+    padding: 15px 25px;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: white;
+    background-color: #f1950b;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    transition: background-color 0.5s;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+#video {
+    position: absolute;
+    top: 5cm;
+    display: none;
+}
+</style>
+</head>
+<body>
+
+<div class="lds-spinner" id="spinner">
+  <div></div>
+</div>
+
+<div id="progress">0%</div>
+
+<div id="title">Bienvenidos a BIT3T</div>
+
+<div class="button-container">
+
+    <button class="button" onclick="window.location.href='index.html'">Inicio</button>
+    <button class="button" onclick="window.location.href='bootcamp.html'">Bootcamp</button>
+    <button class="button" onclick="window.location.href='carreras.html'">Carreras</button>
+    <button class="button" onclick="window.location.href='team.html'">Team</button>
+    <button class="button" onclick="window.location.href='estudiantes.html'">Estudiantes</button>
+    <button class="button" onclick="window.location.href='Comunidad.html'">Comunidad</button>
+    <button class="button" onclick="window.location.href='Token.html'">Token BIT3T</button>
+    <button class="button" onclick="window.location.href='roadmap.html'">Roadmap</button>
+    <button class="button" onclick="window.location.href='whitepaper.html'">Whitepaper</button>
+    
+</div>
+<div style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.4); /* fondo blanco semi-transparente */
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px; /* bordes redondeados */
+"><h2><p><strong>Bienvenidos a nuestras prestigiosas carreras</strong></p></h2>
+    <article>
+        <p><h1><a href="GerenciadevOps.html">Gerencia DeVops</a></h1></p>
+        <p><h1><a href="Data_Science.html">Data Science</a></h1></p>
+        <p><h1><a href="fullstack_listo.html">fullstack</a></h1></p>
+        <p><h1><a href="blockchain.html">Blockchain</a></h1></p>
+    </article>
+
+<div class="footer">
+    &copy; 2024 BIT3T. Todos los derechos reservados.
+</div>
+
+<script>
+let progress = 0;
+const progressElement = document.getElementById('progress');
+const titleElement = document.getElementById('title');
+const spinnerElement = document.getElementById('spinner');
+const videoElement = document.getElementById('video');
+
+// Ajusta los segundos que tarda en cargar la cuenta regresiva aquí
+let seconds = 5;
+
+function updateProgress() {
+    progress++;
+    progressElement.innerText = progress + '%';
+    if (progress < 100) {
+        setTimeout(updateProgress, (seconds * 5));
+    } else {
+        // Oculta la cuenta regresiva y muestra el título cuando la cuenta regresiva llega a 100
+        progressElement.style.display = 'none';
+        spinnerElement.style.display = 'none'; // Oculta el spinner
+        titleElement.style.opacity = '1';
+        videoElement.style.display = 'block'; // Muestra el video
+    }
+}
+
+updateProgress();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffdb58;
+            font-family: Arial, sans-serif;
+        }
+        .register {
+            width: 50%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #0a0101;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+        }
+        input[type=text], input[type=email], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .button {
+            background-color: #ffdb58;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #ffcc00;
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+        h1, h2 {
+            margin: 0;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="register">
+        <h1>BIT3T</h1>
+        <h2>¡Regístrate aquí!</h2>
+        <input type="text" id="name" name="name" placeholder="Nombre completo"><br>
+        <input type="email" id="email" name="email" placeholder="Correo electrónico"><br>
+        <input type="password" id="password" name="password" placeholder="Contraseña"><br>
+        <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirmar contraseña"><br>
+        <button class="button" onclick="registrarUsuario()">Registrarse</button><br>
+        <a href="inisesion.html">¿Ya tienes cuenta? Inicia sesión aquí</a><br>
+    </div>
+
+    <script>
+        function registrarUsuario() {
+            const usuario = {
+                nombre: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value
+            };
+
+            // Hacer una solicitud AJAX a tu servidor para registrar al usuario
+            $.post('/registrar', usuario, function(data) {
+                alert('Usuario registrado con éxito.');
+            });
+        }
+    </script>
+</body>
+</html>

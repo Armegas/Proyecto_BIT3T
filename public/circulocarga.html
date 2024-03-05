@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* La clase .lds-dual-ring se aplica al contenedor del círculo */
+.lds-dual-ring {
+    /* display: inline-block; hace que el elemento sea en línea pero con dimensiones de bloque. Esto significa que puede tener un ancho y un alto, y aún así estar en línea con otros elementos */
+    display: inline-block;
+    /* width: 80px; establece el ancho del contenedor a 80px */
+    width: 80px;
+    /* height: 80px; establece la altura del contenedor a 80px */
+    height: 80px;
+}
+
+/* Los estilos dentro de .lds-dual-ring:after se aplican a un pseudo-elemento que es un hijo directo de un elemento con la clase .lds-dual-ring */
+.lds-dual-ring:after {
+    /* content: " "; es necesario para que el pseudo-elemento se genere */
+    content: " ";
+    /* display: block; hace que el pseudo-elemento sea un bloque, lo que significa que ocupa todo el ancho disponible y provoca un salto de línea antes y después del elemento */
+    display: block;
+    /* width: 64px; establece el ancho del pseudo-elemento a 64px */
+    width: 64px;
+    /* height: 64px; establece la altura del pseudo-elemento a 64px */
+    height: 64px;
+    /* margin: 8px; añade un margen de 8px alrededor del pseudo-elemento */
+    margin: 8px;
+    /* border-radius: 50%; hace que el pseudo-elemento sea un círculo */
+    border-radius: 50%;
+    /* border: 6px solid #fff; añade un borde de 6px de ancho, sólido y blanco al pseudo-elemento */
+    border: 6px solid #fff;
+    /* border-color: #fff transparent #fff transparent; hace que la parte superior e inferior del borde sean blancas y las partes izquierda y derecha sean transparentes */
+    border-color: #fff transparent #fff transparent;
+    /* animation: lds-dual-ring 1.2s linear infinite; aplica la animación llamada lds-dual-ring al pseudo-elemento. La animación dura 1.2 segundos, tiene una función de tiempo lineal, y se repite infinitamente */
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+
+/* @keyframes lds-dual-ring define la animación llamada lds-dual-ring */
+@keyframes lds-dual-ring {
+    /* 0% { ... } define los estilos para el inicio de la animación */
+    0% {
+        /* transform: rotate(0deg); rota el pseudo-elemento 0 grados alrededor de su origen de transformación al inicio de la animación */
+        transform: rotate(0deg);
+    }
+    /* 100% { ... } define los estilos para el final de la animación */
+    100% {
+        /* transform: rotate(360deg); rota el pseudo-elemento 360 grados alrededor de su origen de transformación al final de la animación */
+        transform: rotate(360deg);
+    }
+}
+
+/* Estilo para cambiar el fondo de la página */
+body {
+    /* background-color: #7109fa; establece el color de fondo del cuerpo del documento a #7109fa */
+    background-color: #7109fa;
+
+}
+</style>
+</head>
+<body>
+
+<div class="lds-dual-ring">
+  <div></div>
+</div>
+
+</body>
+</html>
+  

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* La clase .lds-circle se aplica al contenedor del círculo */
+.lds-circle {
+    /* display: inline-block; hace que el elemento sea en línea pero con dimensiones de bloque. Esto significa que puede tener un ancho y un alto, y aún así estar en línea con otros elementos */
+    display: inline-block;
+    /* transform: translateZ(1px); añade una transformación 3D al elemento. En este caso, se mueve 1px a lo largo del eje Z (hacia fuera de la pantalla) */
+    transform: translateZ(1px);
+}
+
+/* Los estilos dentro de .lds-circle > div se aplican a cualquier div que sea un hijo directo de un elemento con la clase .lds-circle */
+.lds-circle > div {
+    /* display: inline-block; hace que el div sea en línea pero con dimensiones de bloque */
+    display: inline-block;
+    /* width: 64px; establece el ancho del div a 64px */
+    width: 64px;
+    /* height: 64px; establece la altura del div a 64px */
+    height: 64px;
+    /* margin: 8px; añade un margen de 8px alrededor del div */
+    margin: 8px;
+    /* border-radius: 50%; hace que el div sea un círculo */
+    border-radius: 50%;
+    /* background: #fff; establece el color de fondo del div a blanco */
+    background: #fff;
+    /* animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite; aplica la animación llamada lds-circle al div. La animación dura 2.4 segundos, tiene una función de tiempo específica (cubic-bezier(0, 0.2, 0.8, 1)), y se repite infinitamente */
+    animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+/* @keyframes lds-circle define la animación llamada lds-circle */
+@keyframes lds-circle {
+    /* 0%, 100% { ... } define los estilos para el inicio (0%) y el final (100%) de la animación */
+    0%, 100% {
+        /* animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5); establece la función de tiempo de la animación en el inicio y el final */
+        animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+    }
+    /* 0% { ... } define los estilos para el inicio de la animación */
+    0% {
+        /* transform: rotateY(0deg); rota el div 0 grados alrededor del eje Y al inicio de la animación */
+        transform: rotateY(0deg);
+    }
+    /* 50% { ... } define los estilos para la mitad de la animación */
+    50% {
+        /* transform: rotateY(1800deg); rota el div 1800 grados alrededor del eje Y a la mitad de la animación */
+        transform: rotateY(1800deg);
+        /* animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1); cambia la función de tiempo de la animación a la mitad del tiempo */
+        animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+    }
+    /* 100% { ... } define los estilos para el final de la animación */
+    100% {
+        /* transform: rotateY(3600deg); rota el div 3600 grados alrededor del eje Y al final de la animación */
+        transform: rotateY(3600deg);
+    }
+}
+
+/* Estilo para cambiar el fondo de la página */
+body {
+    /* background-color: #7109fa; establece el color de fondo del cuerpo del documento a #7109fa */
+    background-color: #7109fa;
+}
+</style>
+</head>
+<body>
+
+<div class="lds-circle">
+  <div></div>
+</div>
+
+</body>
+</html>
+  

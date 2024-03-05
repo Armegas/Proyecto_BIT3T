@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nuestro Equipo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('t2.jpg'); /* Imagen de fondo */
+            background-size: cover;
+        }
+
+        #team {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .member {
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            width: 200px;
+        }
+
+        .member img {
+            width: 100%;
+            height: auto;
+        }
+        <style>
+
+        .button-container {
+            display: flex;
+            justify-content: space-around;
+            gap: 10px;
+        }
+
+        .button {
+            padding: 15px 25px;
+            font-size: 20px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: white;
+            background-color: #f1950b;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px 10px #888888; /* Sombra de color gris */
+            transition: background-color 0.5s;
+        }
+
+        .button:hover {
+            background-color: #3e8e41;
+            box-shadow: 0 5px 15px #666666; /* Sombra de color gris al pasar el cursor */
+        }
+
+        .button:active {
+             background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+ </style>
+    </style>
+</head>
+<body>
+    <h1>Meet Team BIT3T</h1>
+    <div id="team">
+        <!-- Aquí es donde presentaremos a los miembros del equipo -->
+    </div>
+    <script>
+        const team = [
+            { name: 'CEO', image: 'n2.png', description: 'NELSON A. CASTRO A. / Data Scientist, Fundador y emprendedor del concepto BIT3T - Posee un dominio impresionante de una variedad de tecnologías, incluyendo Python, C++, Turbo Pascal, Visual Basic, Foxpro, RPG, Solidity, Blockchain, Bases de Datos relacionales y No relacionales, Github, Git, Docker, FastApi, PowerBi, Azure Cloud, AWS, IBM Cloud, Machine Learning, Deep Learning, y Hacking Ético. Le encanta el trabajo remoto, es empatico y come mucha pizza' },
+            { name: 'Developers', image: 'ruta/a/imagen/Developers.jpg', description: 'Descripción de los Developers' },
+            { name: "Community Manager", image: "ruta imagen Community Manager.jpg", descripcion: "Descripcion del Community Manager" },
+            { name: "Blockchain Product Manager", image: "ruta de imagen Blockchain Product Manager.jpg", descripcion: "descripcion del Blockchain Product Manager"},
+            { name: 'SEO', image: "ruta de la imagen SEO.jpg", description: 'Descripción del SEO' },
+            { name: 'Teacher Manager', image: "jose.jpg", description: 'JOSE Es nuestro Teacher Manager, tiene el destacado rol entre tantas cosas de mantener un alto grado de calidad educativa y de escoger las tecnologias mas adecuadas para formar anuestros BIT3T' },
+            { name: 'Recruiter Manager', image: "gaby.jpg", description: 'GABRIELA / supervisa el proceso de contratación dentro de BIT3T y Fuera apoyando junto a los gerentes de contratación a nuestros egresados, Actualiza los procedimientos de reclutamiento actuales y diseña nuevos, Mantener un seguimiento de las métricas de reclutamiento (por ejemplo, tiempo para llenar un puesto y costo por contratación)' },
+
+            // Asegúrate de reemplazar 'ruta/a/imagen/...' con la ruta real a las imágenes
+            // ...
+        ];
+
+        const teamContainer = document.getElementById('team');
+
+        team.forEach(member => {
+            const div = document.createElement('div');
+            div.className = 'member';
+            div.innerHTML = `
+                <img src="${member.image}" alt="${member.name}">
+                <h2>${member.name}</h2>
+                <p>${member.description}</p>
+            `;
+            teamContainer.appendChild(div);
+        });
+    </script>
+    <div class="button-container">
+        <button class="button"><span>Ingresa a Clases</span></button>
+        <a href="index.html" class="button"><span>Ir a Inicio</span></a>
+      </div>
+</body>
+<p></p>
+<p></p>
+<div class="footer">
+    &copy; 2024 BIT3T. Todos los derechos reservados.
+</div>
+</html>

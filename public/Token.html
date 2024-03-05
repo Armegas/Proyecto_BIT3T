@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>BIT3T</title>
+</head>
+<body>
+    <h1 class="title" id="title">BIT3T</h1>
+    <p class="subtitle">Ya Podras, adquirir tu TOKEN BIT3T</p>
+    <div class="clock">
+        <span id="days">00</span>d <span id="hours">00</span>h <span id="minutes">00</span>m <span id="seconds">00</span>s
+    </div>
+    <button id="spiralButton">Regresar a la página principal</button>
+    <script src="script.js"></script>
+</body>
+
+<style>
+/* styles.css */
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url("DSXIMG2.jpg"); /* Cambia por la URL de tu imagen */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top; /* Ajusta la posición vertical */
+}
+
+.title {
+    font-size: 7rem;
+    color: orange;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: color 0.3s ease;
+    margin-top: -2cm; /* Añadimos margen superior de 2 cm */
+}
+
+.title:hover {
+    color: #ff9900;
+}
+
+.subtitle {
+    font-size: 3rem;
+    color: rgb(0, 0, 0);
+    margin-bottom: 20px;
+}
+
+.clock {
+    font-size: 5rem;
+    color: rgb(0, 4, 10);
+    margin-bottom: 20px;
+}
+
+#spiralButton {
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.5s ease, box-shadow 0.3s ease; /* Añadimos transición para la sombra */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Añadimos sombra */
+}
+
+#spiralButton:hover {
+    transform: rotate(360deg);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2); /* Cambiamos la sombra al pasar el ratón */
+}
+.bottom-image {
+    display: block;
+    margin: 20px auto; /* Ajusta el margen inferior según tus necesidades */
+    max-width: 15%;
+    height: auto;
+    transition: transform 0.5s ease; /* Añadimos transición para el efecto */
+}
+
+.bottom-image:hover {
+    transform: rotate(9deg); /* Efecto de tambaleo al pasar el ratón */
+}
+
+</style>
+
+<script>
+// script.js
+
+const daysElement = document.getElementById('days');
+const hoursElement = document.getElementById('hours');
+const minutesElement = document.getElementById('minutes');
+const secondsElement = document.getElementById('seconds');
+const spiralButton = document.getElementById('spiralButton');
+
+// Ingresa la fecha de inicio y fin en formato 'YYYY-MM-DD HH:MM:SS'
+const startDate = new Date('2024-02-05 12:00:00');
+const endDate = new Date('2024-02-29 18:30:00');
+
+function updateClock() {
+    const now = new Date();
+    const timeLeft = endDate - now;
+
+    const days = Math.floor(timeLeft / (24 * 60 * 60 * 1000));
+    const hours = Math.floor((timeLeft % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
+    const minutes = Math.floor((timeLeft % (60 * 60 * 1000)) / (60 * 1000));
+    const seconds = Math.floor((timeLeft % (60 * 1000)) / 1000);
+
+    daysElement.textContent = days.toString().padStart(2, '0');
+    hoursElement.textContent = hours.toString().padStart(2, '0');
+    minutesElement.textContent = minutes.toString().padStart(2, '0');
+    secondsElement.textContent = seconds.toString().padStart(2, '0');
+
+    setTimeout(updateClock, 1000);
+}
+
+updateClock();
+
+// Redirigir al hacer clic en el botón
+spiralButton.addEventListener('click', () => {
+    window.location.href = 'index.html'; // Cambia la URL según tu necesidad
+});
+</script>
+<body>
+    <p>¡Vamos a romperla, mi gente!</p>
+        <img src="bit3t1.png" alt="Token" class="bottom-image">
+    </body>
+</html>

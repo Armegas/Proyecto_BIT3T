@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #7109fa;
+    font-family: Arial, sans-serif;
+}
+
+#title {
+    font-size: 60px;
+    color: white;
+    text-shadow: 2px 2px 4px #FFD700;
+    margin-bottom: 2cm;
+    animation: fadeIn 2s forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.button {
+    display: inline-block;
+    margin: 10px;
+    padding: 15px 25px;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: white;
+    background-color: #0000ff;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    transition: background-color 0.5s;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+</style>
+</head>
+<body>
+
+<div id="title">Bienvenidos a Data Science Xtreme</div>
+
+<button class="button">Inicio</button>
+<button class="button">Bootcamp</button>
+<button class="button">Carreras</button>
+<button class="button">Team</button>
+<button class="button">Estudiantes</button>
+<button class="button">Contactos</button>
+<button class="button">Comunidad</button>
+
+<div class="footer">
+    &copy; 2024 Data Science Xtreme DSX. Todos los derechos reservados.
+</div>
+
+<script>
+let progress = 0;
+const progressElement = document.getElementById('progress');
+const titleElement = document.getElementById('title');
+
+// Ajusta los segundos que tarda en cargar la cuenta regresiva aquí
+let seconds = 10;
+
+function updateProgress() {
+    progress++;
+    progressElement.innerText = progress + '%';
+    if (progress < 100) {
+        setTimeout(updateProgress, (seconds * 10));
+    } else {
+        // Oculta la cuenta regresiva y muestra el título cuando la cuenta regresiva llega a 100
+        progressElement.style.display = 'none';
+        titleElement.style.opacity = '1';
+    }
+}
+
+updateProgress();
+</script>
+
+</body>
+</html>
