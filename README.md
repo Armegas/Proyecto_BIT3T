@@ -1,4 +1,4 @@
-public/t6.jpg
+
  
 # Proyecto_BIT3T
 # Whitepaper de BIT3T
