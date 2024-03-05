@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://raw.githubusercontent.com/Armegas/Proyecto_BIT3T/main/public/t7.jpg"  height=200>
+<img src="https://raw.githubusercontent.com/Armegas/Proyecto_BIT3T/main/public/t7.jpg"  height=400>
   
 </p>
  
