@@ -1,4 +1,6 @@
-﻿# Proyecto_BIT3T
+public/t6.jpg
+ 
+# Proyecto_BIT3T
 # Whitepaper de BIT3T
 ## Introducción
 El proyecto "BIT3T" es un bootcamp innovador que busca transformar el panorama de la educación tecnológica en Latinoamérica. Nuestro objetivo es formar profesionales en áreas de alta demanda en el mundo de la tecnología, como Full Stack, Data Science, Gerencia DevOps y Blockchain.
